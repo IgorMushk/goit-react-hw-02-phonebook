@@ -1,11 +1,12 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
+  //height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  //align-items: center;
+  align-items: left;
   font-size: 40px;
   color: #010101;
   background-color: #e7ecf2;
@@ -18,9 +19,9 @@ export const Container = styled.div`
     margin: 0;
   }
 
-  & > ul,
+  /* & > ul,
   ol,
   li {
     list-style: none;
-  }
+  } */
 `;
