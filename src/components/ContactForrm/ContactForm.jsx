@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { Button, Form, Inpute, Label } from './ContactForm.Styled';
 
 const { Component } = require('react');
@@ -8,7 +9,7 @@ export class ContactForm extends Component {
     number: '',
   };
 
-  heandlerChange = evt => {
+  handlerChange = evt => {
     const { name, value } = evt.currentTarget;
     //console.dir(evt.currentTarget);
     this.setState({ [name]: value });
@@ -16,11 +17,23 @@ export class ContactForm extends Component {
     //console.log('value', value)
   };
 
+handlerSubmit = evt => {
+    evt.preventDefault();
+    const {name, number} = this.state;
+    const newContact ={
+        id: nanoid(),
+        name: name,
+        number: number
+    }
+    this.props.createContactItem(newContact);
+    this.setState({name:'', number:''})
+};
+
   render() {
     const {name, number} = this.state;
     return (
       <>
-        <Form>
+        <Form onSubmit={this.handlerSubmit}>
           <Label>
             Name
             <Inpute
@@ -31,7 +44,7 @@ export class ContactForm extends Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
               value={name}
-              onChange={this.heandlerChange}
+              onChange={this.handlerChange}
             />
           </Label>
           <Label>
@@ -44,7 +57,7 @@ export class ContactForm extends Component {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
               value={number}
-              onChange={this.heandlerChange}
+              onChange={this.handlerChange}
             />
           </Label>
           <Button type="submit">Add Contact</Button>
@@ -54,8 +67,3 @@ export class ContactForm extends Component {
   }
 }
 
-// handlerSubmit = evt => {
-//     evt.preventDefault();
-//     const {name, number} = this.state;
-
-// };

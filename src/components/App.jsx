@@ -16,6 +16,8 @@ export class App extends Component {
   //console.log('clientList', this.state.contactList);
 
   setStateContacts = dataContact => {
+    // Checking input ccontact in contactList
+    //
     this.setState(prevState => ({
       contactList: [...prevState.contactList, dataContact],
     }));
