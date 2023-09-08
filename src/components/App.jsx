@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import contacts from '../data/contacts.json';
-import { Container } from './App.styled';
+import { Container, Title } from './App.styled';
 import { ContactList } from './ContactList/ContactList';
 import { FilterByName } from './Filter/FilterByName';
 import { ContactForm } from './ContactForrm/ContactForm';
@@ -14,6 +14,12 @@ export class App extends Component {
   };
 
   //console.log('clientList', this.state.contactList);
+
+  setStateContacts = dataContact => {
+    this.setState(prevState => ({
+      contactList: [...prevState.contactList, dataContact],
+    }));
+  };
 
   handlerFilterChange = evt => {
     console.log('evt.currentTarget.value', evt.currentTarget.value)
@@ -40,9 +46,9 @@ export class App extends Component {
     // return <Container>React homework template</Container>;
     return (
       <Container>
-        <h1>Phonebook</h1>
-        <ContactForm/>
-        <h2>Contacts</h2>
+        <Title>Phonebook</Title>
+        <ContactForm createContactItem={this.setStateContacts}/>
+        <Title>Contacts</Title>
         <FilterByName value={this.state.filter} onChange={this.handlerFilterChange}/>
         {/* <div>ContactList</div> */}
         <ContactList

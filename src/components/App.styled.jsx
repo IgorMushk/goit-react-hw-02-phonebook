@@ -10,6 +10,7 @@ export const Container = styled.div`
   font-size: 40px;
   color: #010101;
   background-color: #e7ecf2;
+  padding-left: 10px;
   & > ul,
   li,
   h1,
@@ -24,4 +25,11 @@ export const Container = styled.div`
   li {
     list-style: none;
   } */
+`;
+
+export const Title = styled.h2`
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: 700;
 `;
