@@ -17,25 +17,33 @@ export class App extends Component {
 
   setStateContacts = dataContact => {
     // Checking input ccontact in contactList
-    //
+    const checkContactList = this.state.contactList.some(
+      contact => contact.name.toLowerCase() === dataContact.name.toLowerCase()
+    );
+    if (checkContactList) {
+      alert( `${dataContact.name} is already in contacts` );
+      return
+    }
+
     this.setState(prevState => ({
       contactList: [...prevState.contactList, dataContact],
     }));
   };
 
   handlerFilterChange = evt => {
-    console.log('evt.currentTarget.value', evt.currentTarget.value)
-    this.setState({filter : evt.currentTarget.value})
-  }
+    //console.log('evt.currentTarget.value', evt.currentTarget.value)
+    this.setState({ filter: evt.currentTarget.value });
+  };
 
-  getFilteredContats=()=>{
-    const filter =this.state.filter.toLowerCase()
+  getFilteredContats = () => {
+    const filter = this.state.filter.toLowerCase();
     //console.log('filter', filter)
-    const filteredContats = this.state.contactList.filter(contact => contact.name.toLowerCase().includes(filter));
+    const filteredContats = this.state.contactList.filter(contact =>
+      contact.name.toLowerCase().includes(filter)
+    );
     //console.log('filteredContats', filteredContats)
     return filteredContats;
-  }
-
+  };
 
   deleteContact = id => {
     this.setState(prevState => ({
@@ -49,9 +57,12 @@ export class App extends Component {
     return (
       <Container>
         <Title>Phonebook</Title>
-        <ContactForm createContactItem={this.setStateContacts}/>
+        <ContactForm createContactItem={this.setStateContacts} />
         <TitleList>Contacts</TitleList>
-        <FilterByName value={this.state.filter} onChange={this.handlerFilterChange}/>
+        <FilterByName
+          value={this.state.filter}
+          onChange={this.handlerFilterChange}
+        />
         {/* <div>ContactList</div> */}
         <ContactList
           // contacts={this.state.contactList}
