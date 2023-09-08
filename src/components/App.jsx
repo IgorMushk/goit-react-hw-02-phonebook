@@ -9,8 +9,6 @@ export class App extends Component {
   state = {
     contactList: contacts,
     filter: '',
-    // name: '',
-    // number: '',
   };
 
   //console.log('clientList', this.state.contactList);
@@ -52,8 +50,6 @@ export class App extends Component {
   };
 
   render() {
-    //console.log('clientList', this.state.contactList);
-    // return <Container>React homework template</Container>;
     return (
       <Container>
         <Title>Phonebook</Title>
@@ -63,7 +59,6 @@ export class App extends Component {
           value={this.state.filter}
           onChange={this.handlerFilterChange}
         />
-        {/* <div>ContactList</div> */}
         <ContactList
           // contacts={this.state.contactList}
           contacts={this.getFilteredContats()}
@@ -74,11 +69,3 @@ export class App extends Component {
   }
 }
 
-//<div>
-//  <h1>Phonebook</h1>
-//  <ContactForm ... />
-//
-//  <h2>Contacts</h2>
-//  <Filter ... />
-//  <ContactList ... />
-//</div>

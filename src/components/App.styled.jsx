@@ -11,20 +11,6 @@ export const Container = styled.div`
   color: #010101;
   background-color: #e7ecf2;
   padding-left: 10px;
-  /* & > ul,
-  li,
-  h1,
-  h2,
-  h3,
-  p {
-    margin: 0;
-  } */
-
-  /* & > ul,
-  ol,
-  li {
-    list-style: none;
-  } */
 `;
 
 export const Title = styled.h1`

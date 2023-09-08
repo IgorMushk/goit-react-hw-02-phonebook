@@ -22,9 +22,7 @@ export const Button = styled.button`
   display: block;
   width: fit-content;
   //width: 50px;
-  //height: fit-content;
   height: 24px;
-  //padding: 5px;
   border: 4px solid transparent;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
