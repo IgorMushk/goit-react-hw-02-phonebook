@@ -3,6 +3,7 @@ import contacts from '../data/contacts.json';
 import { Container } from './App.styled';
 import { ContactList } from './ContactList/ContactList';
 import { FilterByName } from './Filter/FilterByName';
+import { ContactForm } from './ContactForrm/ContactForm';
 
 export class App extends Component {
   state = {
@@ -40,7 +41,7 @@ export class App extends Component {
     return (
       <Container>
         <h1>Phonebook</h1>
-        <div>ContactForm</div>
+        <ContactForm/>
         <h2>Contacts</h2>
         <FilterByName value={this.state.filter} onChange={this.handlerFilterChange}/>
         {/* <div>ContactList</div> */}
