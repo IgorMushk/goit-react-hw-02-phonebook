@@ -11,7 +11,14 @@ export class App extends Component {
     number: '',
   };
 
-  //console.log('clientList', this.state.clientList);
+  //console.log('clientList', this.state.contactList);
+
+  deleteContact = id => {
+    this.setState(prevState =>({
+      contactList: prevState.contactList.filter(contact => contact.id !==id),
+    }));
+  };
+
 
   render() {
     console.log('clientList', this.state.contactList);
@@ -23,7 +30,7 @@ export class App extends Component {
         <h2>Contacts</h2>
         <div>Filter</div>
         <div>ContactList</div>
-        <ContactList contacts={this.state.contactList}></ContactList>
+        <ContactList contacts={this.state.contactList} onDeleteContact={this.deleteContact} ></ContactList>
       </Container>
     );
   }
