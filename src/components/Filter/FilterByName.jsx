@@ -1,4 +1,5 @@
-import { FiterContainer, Inpute, Label } from './FilterByName.styled';
+//import { FiterContainer, Inpute, Label } from './FilterByName.styled';
+import { Inpute, Label } from './FilterByName.styled';
 
 export const FilterByName = ({value, onChange}) => {
   return (
