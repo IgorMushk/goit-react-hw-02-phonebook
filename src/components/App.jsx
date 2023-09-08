@@ -21,9 +21,9 @@ export class App extends Component {
 
   getFilteredContats=()=>{
     const filter =this.state.filter.toLowerCase()
-    console.log('filter', filter)
+    //console.log('filter', filter)
     const filteredContats = this.state.contactList.filter(contact => contact.name.toLowerCase().includes(filter));
-    console.log('filteredContats', filteredContats)
+    //console.log('filteredContats', filteredContats)
     return filteredContats;
   }
 
