@@ -11,14 +11,14 @@ export const Container = styled.div`
   color: #010101;
   background-color: #e7ecf2;
   padding-left: 10px;
-  & > ul,
+  /* & > ul,
   li,
   h1,
   h2,
   h3,
   p {
     margin: 0;
-  }
+  } */
 
   /* & > ul,
   ol,
@@ -27,9 +27,16 @@ export const Container = styled.div`
   } */
 `;
 
-export const Title = styled.h2`
-  margin-top: 24px;
-  margin-bottom: 24px;
-  font-size: 28px;
+export const Title = styled.h1`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 34px;
+  font-weight: 700;
+`;
+
+export const TitleList = styled.h2`
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
   font-weight: 700;
 `;

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import contacts from '../data/contacts.json';
-import { Container, Title } from './App.styled';
+import { Container, Title, TitleList } from './App.styled';
 import { ContactList } from './ContactList/ContactList';
 import { FilterByName } from './Filter/FilterByName';
 import { ContactForm } from './ContactForrm/ContactForm';
@@ -9,8 +9,8 @@ export class App extends Component {
   state = {
     contactList: contacts,
     filter: '',
-    name: '',
-    number: '',
+    // name: '',
+    // number: '',
   };
 
   //console.log('clientList', this.state.contactList);
@@ -50,7 +50,7 @@ export class App extends Component {
       <Container>
         <Title>Phonebook</Title>
         <ContactForm createContactItem={this.setStateContacts}/>
-        <Title>Contacts</Title>
+        <TitleList>Contacts</TitleList>
         <FilterByName value={this.state.filter} onChange={this.handlerFilterChange}/>
         {/* <div>ContactList</div> */}
         <ContactList
